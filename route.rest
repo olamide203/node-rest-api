@@ -1,0 +1,37 @@
+GET http://192.168.33.10:8080/users 
+
+###
+GET http://192.168.33.10:8080/users/616c2c19bcb25ac2159c1596
+
+###
+POST http://192.168.33.10:8080/users 
+Content-Type: application/json
+
+{
+  "name": "Uzumaki Naruto",
+  "username": "copy_ninja",
+  "password": "3herwkrnke",
+  "email": "olamideumarq@gmail.com"
+}
+###
+
+DELETE  http://192.168.33.10:8080/users/616c44430aca47261e8544a5
+
+###
+PATCH   http://192.168.33.10:8080/users/616c4478d4de4ff04da32950
+Content-Type: application/json
+
+{
+  "name": "Uzumaki Boruto",
+  "password": "jougan"
+}
+
+###
+fetch("http://192.168.33.10:8080/users", {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+  },
+})
+  .then((result) => result.json())
+  .then((json) => console.log(json));
